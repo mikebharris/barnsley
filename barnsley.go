@@ -22,7 +22,6 @@ func generateBarnsleyFern(width int, height int, iterations int) *image.RGBA {
 	fernGreen := color.RGBA{R: 000, G: 128, B: 000, A: 0xff}
 	fernRed := color.RGBA{R: 128, G: 000, B: 000, A: 0xff}
 	fernBlue := color.RGBA{R: 000, G: 000, B: 128, A: 0xff}
-	fernYellow := color.RGBA{R: 128, G: 128, B: 000, A: 0xff}
 
 	var x float64 = 0
 	var y float64 = 0
@@ -34,13 +33,13 @@ func generateBarnsleyFern(width int, height int, iterations int) *image.RGBA {
 			colour = fernGreen
 		} else if r < 87 {
 			x, y = generateSuccessivelySmallerLeaflets(x, y)
-			colour = fernBlue
+			colour = fernGreen
 		} else if r < 94 {
 			x, y = generateLargestLeftHandLeaflet(x, y)
 			colour = fernRed
 		} else {
 			x, y = generateLargestRightHandLeaflet(x, y)
-			colour = fernYellow
+			colour = fernBlue
 		}
 		img.Set(int(x*xRatio)+width/2, int(y*yRatio), colour)
 	}
