@@ -13,12 +13,12 @@ Or use it in your own Go program, say to produce a gif, with:
 package main
 
 import (
-	"github.com/mikebharris/barnsley"
+	"github.com/mikebharris/barnsley/fern"
 	"image/gif"
 	"os"
 )
 
 func main() {
-	gif.Encode(os.Stdout, barnsley.GenerateBarnsleyFern(240, 320, 100000), nil)
+	gif.Encode(os.Stdout, fern.GenerateBarnsleyFern(240, 320, 100000), nil)
 }
 ```
