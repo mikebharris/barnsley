@@ -13,10 +13,10 @@ func main() {
 	height := 1256
 	var iterations = 10000000
 
-	png.Encode(os.Stdout, generateBarnsleyFern(width, height, iterations))
+	png.Encode(os.Stdout, GenerateBarnsleyFern(width, height, iterations))
 }
 
-func generateBarnsleyFern(width int, height int, iterations int) *image.RGBA {
+func GenerateBarnsleyFern(width int, height int, iterations int) *image.RGBA {
 	img := image.NewRGBA(image.Rect(0, 0, width, height))
 	xRatio, yRatio := calculateCanvasRatios(width, height)
 	fernGreen := color.RGBA{R: 000, G: 128, B: 000, A: 0xff}
