@@ -1,20 +1,18 @@
-package main
+package barnsley
 
 import (
 	"image"
 	"image/color"
-	"image/png"
 	"math/rand"
-	"os"
 )
 
-func main() {
-	width := 1024
-	height := 1256
-	var iterations = 10000000
-
-	png.Encode(os.Stdout, GenerateBarnsleyFern(width, height, iterations))
-}
+//func main() {
+//	width := 1024
+//	height := 1256
+//	var iterations = 10000000
+//
+//	png.Encode(os.Stdout, GenerateBarnsleyFern(width, height, iterations))
+//}
 
 func GenerateBarnsleyFern(width int, height int, iterations int) *image.RGBA {
 	img := image.NewRGBA(image.Rect(0, 0, width, height))
